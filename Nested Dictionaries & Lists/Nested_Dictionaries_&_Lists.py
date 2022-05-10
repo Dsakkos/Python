@@ -67,14 +67,19 @@ y = iterateDictionary2( students)
 
 # Iterate Through a Dictionary with List Values
 dojo = {
-'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
-'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+    'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+    'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
 }
-# def printInfo(dojo):
-for key, values in dojo.items():
-    print('7', key)
-    if(isinstance(values, list)):
-        for value in values:
+def printInfo(dojo):
+    for key, values in dojo.items():
+        if key == ("locations"):
+            print('7', key)
+        elif key == ("instructors"):
+            print('8', key)
+        if(isinstance(values, list)):
+            for value in values:
+                print(value)
+        else:
             print(value)
-    else:
-        print(value)
+
+x = printInfo(dojo)
