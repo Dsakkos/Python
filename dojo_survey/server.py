@@ -7,13 +7,14 @@ app.secret_key = 'coding dojo'
 def index():
     return render_template("index.html")
 
-@app.route('/', methods=['POST'])
+@app.route('/process', methods=['POST'])
 def user_survey():
     print("Got Post Info")
     session['fullname'] = request.form['name']
     session['location'] = request.form['location']
     session['language'] = request.form['language']
     session['Comments'] = request.form['comment']
+    print(request.form)
     return redirect('/result')
 
 
