@@ -9,13 +9,27 @@
 	</head>
 	<body>
 		<h1>All Users</h1>
-		{% for one_user in users %}
-			<p>Full Name: {{one_user.first_name}} {{one_user.last_name}}</p>
-			<p>Last Name: {{one_user.last_name}}</p>
-			<p>Email: {{one_user.email}}</p>
-			<p>Created At: {{one_user.created_at}}</p>
-			<hr />
-		{% endfor %}
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Full Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">Created At</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for one_user in users %}
+					<tr>
+						<td>{{one_user.id}}</td>
+						<td>{{one_user.first_name}} {{one_user.last_name}}</td>
+						<td>{{one_user.last_name}}</td>
+						<td>{{one_user.email}}</td>
+						<td>{{one_user.created_at}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 		<a href="/users/new">Add a New User</a>
 	</body>
 </html>
