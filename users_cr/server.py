@@ -3,6 +3,11 @@ from flask import Flask, render_template, request, redirect
 from user import User
 app = Flask(__name__)
 app.secret_key = "coding dojo"
+
+@app.route('/')
+def home():
+    return redirect('/users')
+
 @app.route('/users/new')
 def index():
     return render_template("new_users.html")
