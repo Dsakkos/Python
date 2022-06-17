@@ -21,8 +21,8 @@ def create_user():
         "lname" : request.form["lname"],
         "email" : request.form["email"],
     }
-    User.create(data)
-    return redirect('/users')
+    id = User.create(data)
+    return redirect(f'/users/{id}')
 
 
 @app.route('/users/<int:id>')
